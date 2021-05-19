@@ -1,10 +1,18 @@
 <template>
   <div ref="rightPanel" :class="{show:show}" class="rightPanel-container">
     <div class="rightPanel-background" />
+
     <div class="rightPanel">
-      <div class="handle-button" :style="{'top':buttonTop+'px','background-color':theme}" @click="show=!show">
+      <!-- <div
+        class="handle-button"
+        :style="{'top':buttonTop+'px','background-color':theme}"
+
+        @click="show=!show"
+      >
+
         <i :class="show?'el-icon-close':'el-icon-setting'" />
-      </div>
+      </div> -->
+
       <div class="rightPanel-items">
         <slot />
       </div>
@@ -29,12 +37,15 @@ export default {
   },
   data() {
     return {
-      show: false
+      // show: false
     }
   },
   computed: {
     theme() {
       return this.$store.state.settings.theme
+    },
+    show() {
+      return this.$store.state.settings.show
     }
   },
   watch: {
@@ -72,6 +83,7 @@ export default {
       const body = document.querySelector('body')
       body.insertBefore(elx, body.firstChild)
     }
+
   }
 }
 </script>
@@ -92,7 +104,7 @@ export default {
   opacity: 0;
   transition: opacity .3s cubic-bezier(.7, .3, .1, 1);
   background: rgba(0, 0, 0, .2);
-  z-index: 2022;
+  z-index: 2021;
 }
 
 .rightPanel {
@@ -140,6 +152,10 @@ export default {
   i {
     font-size: 24px;
     line-height: 48px;
+  }
+
+  &:hover {
+    background-color: blueviolet;
   }
 }
 </style>

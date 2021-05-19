@@ -1,54 +1,38 @@
 <template>
-  <div>
-    <svg-icon icon-class="setting-btn" class="btn-svg" @click="drawer = true" />
+  <div class="drawer-container">
+    <div>
+      <h3 class="drawer-title">系统布局配置</h3>
 
-    <el-drawer
-      title="我是标题"
-      :visible.sync="drawer"
-      :with-header="false"
-      :modal="false"
-      size="20%"
-    >
-      <div class="drawer-container">
-        <div>
-          <h3 class="drawer-title">系统布局配置</h3>
-
-          <!-- <div class="drawer-item">
+      <!-- <div class="drawer-item">
         <span>Theme Color</span>
         <theme-picker style="float: right;height: 26px;margin: -3px 8px 0 0;" @change="themeChange" />
       </div> -->
 
-          <div class="drawer-item">
-            <span>开启 Tags-View</span>
-            <el-switch v-model="tagsView" class="drawer-switch" />
-          </div>
-
-          <div class="drawer-item">
-            <span>固定 Header</span>
-            <el-switch v-model="fixedHeader" class="drawer-switch" />
-          </div>
-
-          <div class="drawer-item">
-            <span>侧边栏 Logo</span>
-            <el-switch v-model="sidebarLogo" class="drawer-switch" />
-          </div>
-
-        </div>
+      <div class="drawer-item">
+        <span>开启 Tags-View</span>
+        <el-switch v-model="tagsView" class="drawer-switch" />
       </div>
-    </el-drawer>
+
+      <div class="drawer-item">
+        <span>固定 Header</span>
+        <el-switch v-model="fixedHeader" class="drawer-switch" />
+      </div>
+
+      <div class="drawer-item">
+        <span>侧边栏 Logo</span>
+        <el-switch v-model="sidebarLogo" class="drawer-switch" />
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
-
-  components: {
-
-  },
+  components: { },
   data() {
-    return {
-      drawer: false
-    }
+    return {}
   },
   computed: {
     fixedHeader: {
@@ -97,10 +81,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-svg {
- font-size: 18px;
-}
-
 .drawer-container {
   padding: 24px;
   font-size: 14px;
@@ -124,5 +104,4 @@ export default {
     float: right
   }
 }
-
 </style>

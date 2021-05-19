@@ -151,12 +151,14 @@ export const constantRoutes = [
   },
 
   {
-    path: 'external-link',
+    path: '/test',
     component: Layout,
+    redirect: '/test/index',
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'index',
+        component: () => import('@/views/test/index'),
+        meta: { title: 'Test', icon: 'el-icon-video-camera-solid' }
       }
     ]
   },

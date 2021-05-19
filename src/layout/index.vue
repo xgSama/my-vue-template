@@ -11,7 +11,6 @@
       <app-main />
     </div>
     <right-panel v-if="showSettings">
-
       <settings />
     </right-panel>
   </div>
@@ -94,7 +93,7 @@ export default {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 9;
+    z-index: 10;
     width: calc(100% - #{$sideBarWidth});
     transition: width 0.28s;
   }
